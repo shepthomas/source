@@ -9,8 +9,16 @@ class UsersController < ApplicationController
 
     # check if the user can save
     if @user.save
+      # keep hold of user across site
+      session[:user_id] = @user.id
+
+      # let user know that they signed up
+      flash[:success] = "Thanks for signing up!"
+      
       # redirect to home page
       redirect_to root_path
+
+
     else
       # otherwise re-show new signup page
       render "new"

@@ -9,9 +9,16 @@
   </head>
 
   <body>
-    <nav>
-      <!-- -->
-    </nav>
+    <% if flash[:success].present? %>
+    <div class="flash">
+      <%= flash[:success] %>
+    </div>
+    <% end %>
+    <header>
+      <nav>
+        <%= @current_user.name %>
+      </nav>
+    </header>
     <main>
       <%= yield %>
     </main>
