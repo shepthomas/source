@@ -36,6 +36,11 @@ gem 'bcrypt', '~> 3.1.7'
 # add in simple form
 gem 'simple_form'
 
+
+# admin
+gem 'devise'
+gem 'activeadmin'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
