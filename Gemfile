@@ -36,10 +36,14 @@ gem 'bcrypt', '~> 3.1.7'
 # add in simple form
 gem 'simple_form'
 
-
 # admin
 gem 'devise'
 gem 'activeadmin'
+
+# image upload
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
