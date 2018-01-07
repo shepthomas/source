@@ -1,7 +1,17 @@
-<h1><%= @item.title %></h1>
+<div class="item-page">
 
-<%= image_tag @item.image.medium %>
+  <h1><%= @item.title %></h1>
+  <p>
+    <strong>Categories:</strong>
+    <%= format_categories @item.categories %>
+  </p>
+  
+  <%= simple_format @item.description %>
 
-<p>
-  <%= link_to "Download", @item.image.url, download: true %>
-</p>
+  <%= image_tag @item.image.medium %>
+
+  <p>
+    <%= link_to "Download photo", @item.image.url, download: true %>
+  </p>
+
+</div>
