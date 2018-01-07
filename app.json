@@ -1,5 +1,5 @@
 {
-  'scripts': {
+  "scripts": {
     "postdeploy" : "rails db:migrate"
   }
 }
