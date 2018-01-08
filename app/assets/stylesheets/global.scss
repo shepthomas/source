@@ -71,6 +71,20 @@ main {
   }
 }
 
+.search {
+
+  padding-bottom: 40px;
+  form {
+    max-width: none;
+    input[type=text] {
+      width: 100%;
+      padding: 1em 1.5em;
+    }
+    
+  }
+
+}
+
 form {
   max-width: 30em;
 
