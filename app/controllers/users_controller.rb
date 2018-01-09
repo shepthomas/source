@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
       # let user know that they signed up
       flash[:success] = "Thanks for signing up!"
-      
+
       # redirect to home page
       redirect_to root_path
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def form_params
     params.require(:user).permit(:name, :username,
-      :email, :password, :password_confirmation)
+      :email, :password, :password_confirmation, :subscription_plan)
   end
 
 end

@@ -7,6 +7,10 @@
     <%= f.input :email %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
+    <%= f.input :subscription_plan, as: :select, collection: [
+      ['Basic Subscription - $10/month','basic'],
+      ['Pro Subscription - $20/month','pro']
+    ], include_blank: false %>
     <%= f.button :submit, "Sign up"  %>
   <% end %>
 </div>
