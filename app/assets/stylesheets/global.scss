@@ -80,7 +80,7 @@ main {
       width: 100%;
       padding: 1em 1.5em;
     }
-    
+
   }
 
 }
@@ -97,7 +97,7 @@ form {
     margin: 0 0 0.25em 0;
   }
 
-  input[type=text], input[type=email], input[type=password], textarea {
+  input[type=text], input[type=email], input[type=password], textarea, select {
     width: 100%;
     padding: 0.5em 0.75em 0.5em 0.75em;
 
@@ -118,6 +118,8 @@ form {
 
     padding: 0.5em 1.5em 0.5em 1.5em;
   }
+
+  
 
   abbr {
     color: #ff4141;
