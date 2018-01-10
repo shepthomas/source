@@ -11,6 +11,32 @@
       ['Basic Subscription - $10/month','basic'],
       ['Pro Subscription - $20/month','pro']
     ], include_blank: false %>
+    <div id="card-errors">
+      <% @user.errors[:stripe_token].each do |e| %>
+        <%= e %>
+      <% end %>
+    </div>
+    <div id="card"></div>
     <%= f.button :submit, "Sign up"  %>
   <% end %>
 </div>
+
+<script>
+  var stripe = Stripe("<%= Rails.application.secrets.stripe_key %>"),
+      elements = stripe.elements(),
+      card = elements.create("card", {hidePostalCode: true});
+  card.mount("#card");
+  $("form#new_user").on("submit",function(e){
+    e.preventDefault();
+
+    stripe.createToken(card).then(function(result) {
+      if (result.error) {
+        $("#card-errors").html(result.error.message)
+      } else {
+        $("form#new_user").append("<input type='hidden' name='user[stripe_token]' value='"+ result.token.id +"'>");
+        $("form#new_user").get(0).submit()
+      }
+    });
+
+  });
+</script>
