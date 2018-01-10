@@ -29,7 +29,7 @@
 
       <nav>
         <% if is_logged_in? %>
-          <strong><%= @current_user.name %></strong>
+          <strong><%= link_to @current_user.name, edit_account_path %></strong>
           <%= link_to "All photos", items_path %>
           <%= link_to "Categories", categories_path %>
           <%= link_to "Log out", session_path, method: :delete %>

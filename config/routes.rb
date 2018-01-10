@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # users cna sign up multiple times
   resources :users
 
+  # user can only edit one account
+  resource :account
+  
   # users can only make one session
   resource :session
 
