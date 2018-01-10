@@ -7,3 +7,10 @@
     include_blank: false %>
     <%= f.button :submit, "Update account" %>
 <% end %>
+
+<p>
+  <%= link_to "Delete account",
+  account_path,
+  method: :delete,
+  data: { confirm: "Are you sure you want to delete your account?" } %>
+</p>
