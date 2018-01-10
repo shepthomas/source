@@ -28,6 +28,9 @@ class User < ApplicationRecord
       # save customer id to the database
       self.stripe_customer = customer.id
 
+      # save subscription id to database
+      self.stripe_subscription = subscription.id
+
       # save everything
       self.save
 
